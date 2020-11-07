@@ -1,0 +1,88 @@
+:root {
+  --purple1: #180049;
+}
+
+.menuButton {
+  height: 40px;
+  width: 55px;
+  background-color: var(--purple1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menuButton .bar {
+  width: 16px;
+  height: 1px;
+  background-color: white;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.menuItems {
+  width: 100%;
+  height: 500px;
+  background-color: var(--purple1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .7s ease-out;
+  transition: .7s ease-out;
+  height: 0px;
+}
+
+.menuItems ul {
+  list-style: none;
+  width: 100%;
+}
+
+.menuItems ul li {
+  text-align: center;
+  padding: 10px;
+  display: none;
+}
+
+.menuItems ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+/*# sourceMappingURL=hamburgerMenu.css.map */

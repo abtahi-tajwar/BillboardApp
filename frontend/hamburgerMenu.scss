@@ -1,0 +1,52 @@
+:root {
+    --purple1: #180049;
+}
+
+.menuButton {
+    height: 40px;
+    width: 55px;
+    background-color: var(--purple1);
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    .bar {
+        width: 16px;
+        height: 1px;
+        background-color: white;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+}
+.menuItems {
+    width: 100%;
+    height: 500px;
+    background-color: var(--purple1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s ease-out;
+    height: 0px;
+    ul {
+        list-style: none;
+        width: 100%;
+        li {
+            text-align: center;
+            padding: 10px;
+            display: none;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20%);
+    } to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
