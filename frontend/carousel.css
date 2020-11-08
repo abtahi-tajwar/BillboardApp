@@ -1,0 +1,74 @@
+:root {
+  --purple1: #180049;
+}
+
+.carousel-frame {
+  width: 90%;
+  max-width: 352px;
+  height: 162px;
+  margin: auto;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.carousel-frame::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-frame .carousel-container {
+  width: calc(3*352px);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel-frame .carousel-container .slide {
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  background-color: white;
+  background-size: 95% auto;
+}
+
+.carousel-navigator-container {
+  height: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carousel-navigator-container .carousel-navigator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carousel-navigator-container .carousel-navigator .navigator {
+  height: 5px;
+  width: 5px;
+  margin: 3px;
+  border: 2px solid var(--purple1);
+  border-radius: 5px;
+  -webkit-transition: .5s all linear;
+  transition: .5s all linear;
+}
+/*# sourceMappingURL=carousel.css.map */
