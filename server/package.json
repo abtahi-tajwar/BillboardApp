@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd -f ./config/dev.env nodemon index.js",
+    "db": "D:\\mongodb\\bin\\mongod.exe --dbpath=D:\\mongodata"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.0",
+    "validator": "^13.5.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
+}
