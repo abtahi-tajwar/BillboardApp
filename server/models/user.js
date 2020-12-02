@@ -51,6 +51,24 @@ User.methods.genToken = async function () {
     return token
 
 }
+User.methods.toJSON = function () {
+    const userObject = this.toObject()
+    delete userObject.password
+    delete userObject.tokens
+    return userObject
+}
+User.statics.checkAuthorization = async function (email, password) {
+    const user = await this.findOne({ email })
+    if (!user) {
+        throw new Error('Invalid email or password')
+    }
+    const encrypted_password = user.password
+    const matched = await bcryptjs.compare(password, encrypted_password)
+    if(!matched) {
+        throw new Error('Invalid email or password')
+    }
+    return user
+}
 
 User.pre('save', async function (next) {
     if(this.isModified('password')) {
