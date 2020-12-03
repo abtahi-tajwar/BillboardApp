@@ -1,0 +1,13 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+.upper-bar {
+    background-color: #180049;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    margin: 5px 0px 8px 25px;
+}
