@@ -62,6 +62,7 @@ body {
 }
 .category-featuredOffers {
     display: flex;
+    margin-top: 10px;
     overflow-x: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
