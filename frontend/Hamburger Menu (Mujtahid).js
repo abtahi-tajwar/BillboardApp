@@ -1,4 +1,3 @@
-
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 const links = document.querySelectorAll(".menu li");
@@ -10,9 +9,6 @@ hamburger.addEventListener("click", () => {
         link.classList.toggle("fade");
     })
 });
-
-
-
 
 
 const hamburgerMenuButton = document.querySelector('.menuButton')
@@ -53,6 +49,6 @@ function changeListItemVisual(view) {
 function addStaggerToLists(time) {
     const listItem = document.querySelectorAll('.menuItems ul li')
     listItem.forEach((item, i) => {
-        item.style.animation = `${time}s slideIn ${.1*i + .2}s backwards`
+        item.style.animation = `${time}s slideIn ${.1*i + .5}s backwards`
     })
 }
