@@ -2,6 +2,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 .upper-bar {
     background-color: #180049;
@@ -74,3 +75,48 @@ body {
     cursor: pointer;
     margin: 10px;
 }    
+.map {
+    display: flex;
+    margin-left: 100px;
+}
+.map-logo {
+    margin: 10px;
+}
+.map-text {
+    margin-top: 15px;
+}
+.map-text a {
+    text-decoration: none;
+    color: #919191;
+}
+.offer1, .offer2, .offer3, .offer4 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.offer1-text, .offer2-text, .offer3-text, .offer4-text {
+    display: flex;
+    font-size: 13px;
+    box-shadow: 0px 2px 10px rgba(129, 129, 129, 0.7);
+    width: 311px;
+}
+.offer1-text2, .offer2-text2, .offer3-text2, .offer4-text2 {
+    margin-left: 10px;
+}
+.view-btn a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 20px;
+    background-color: blue;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.view-btn {
+    position: relative;
+    left: 250px;
+    top: -10px;
+}
+.suggested-offers {
+    margin: 20px 0px 0px 32px;
+}
