@@ -39,6 +39,24 @@ userRouter.post('/user/login', async (req, res) => {
         res.status(404).send(e)
     }
 })
+userRouter.get('/user/logout', auth, async (req, res) => {
+    try {
+        const user = req.user
+        user.tokens = user.tokens.filter(token => token.token !== req.token)
+        await user.save()
+        res.status(200).send()
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+userRouter.delete('/user/me', auth, async (req, res) => {
+    try { 
+        await req.user.remove()
+        res.status(202).send()
+    } catch (e) {
+        res.status(500).send()
+    }
+})
 userRouter.get('/user/me', auth, async (req, res) => {
     const user = req.user
     res.status(200).send(user)
@@ -65,5 +83,10 @@ userRouter.post('/user/avatar/me', auth, avatar.single('avatar'), async (req, re
     res.status(201).send()
 }, (error, req, res, next) => {
     res.status(405).send({error: error.message})
+})
+userRouter.delete('/user/avatar/me', auth, async(req, res) => {
+    req.user.avatar = undefined
+    await req.user.save()
+    res.status(202).send()
 })
 module.exports = userRouter

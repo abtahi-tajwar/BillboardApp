@@ -31,6 +31,33 @@ const User = new mongoose.Schema({
             }
         }
     },
+    location: {
+        active: {
+            type: Boolean,
+            default: false
+        },
+        place: {
+            type: String,
+            trim: true
+        },
+        street: {
+            type: String,
+            trime: true
+        },
+        area: {
+            type: String,
+            trim: true
+        },
+        district: {
+            type: String,
+            trim: true
+        },
+        country: {
+            type: String,
+            trim: true
+        }
+
+    },
     avatar: {
         type: Buffer
     },
