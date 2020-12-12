@@ -64,11 +64,14 @@ const User = new mongoose.Schema({
     type: {
         type: String
     },
+
     tokens: [{
         token: {
             type: String
         }
     }]
+}, {
+    timestamps: true
 })
 
 User.methods.genToken = async function () {

@@ -1,9 +1,9 @@
 background =  {
     one: 'exported/featured-offer-1.png'
 }
-let state =  {
-    position: 1
-}
+// let state =  {
+//     position: 1
+// }
 setNavigator()
 const carouselContainer = document.querySelectorAll('.slide')
 carouselContainer.forEach(slide => {

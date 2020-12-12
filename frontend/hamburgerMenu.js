@@ -1,7 +1,7 @@
 const hamburgerMenuButton = document.querySelector('.menuButton')
-const state = {
-    hamburgerMenu: false
-}
+// const state = {
+//     hamburgerMenu: false
+// }
 hamburgerMenuButton.addEventListener('click', toggleMenu)
 addStaggerToLists(1)
 function toggleMenu() {
