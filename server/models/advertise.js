@@ -15,7 +15,7 @@ const Advertise = new mongoose.Schema({
         image: Buffer
     }],
     baseInfo: {
-        type: Text,
+        type: String,
         trim: true,
         validate(value) {
             if(value.length > 10) {
@@ -61,7 +61,15 @@ const Advertise = new mongoose.Schema({
         type: Buffer
     }],
     expire_date: {
-        type: String
+        day: {
+            type: Number
+        },
+        month: {
+            type: Number
+        },
+        year: {
+            type: Number
+        }
     },
     likes: {
         type: Number,
@@ -89,4 +97,4 @@ const Advertise = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('Advertise', mongoose)
+module.exports = mongoose.model('Advertise', Advertise)

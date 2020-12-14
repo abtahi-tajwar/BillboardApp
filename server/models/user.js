@@ -104,6 +104,9 @@ User.pre('save', async function (next) {
     if(this.isModified('password')) {
         this.password = await bcryptjs.hash(this.password, 8)
     }
+    if(this.isModified('type')) {
+        this.type = this.type.toLowerCase()
+    }
     next()
 })
 
