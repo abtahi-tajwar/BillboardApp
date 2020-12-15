@@ -55,21 +55,16 @@ const Advertise = new mongoose.Schema({
     products: [{
         name: {
             type: String
+        },
+        image: {
+            type: Buffer
         }
-    }],
-    productImages: [{
-        type: Buffer
     }],
     expire_date: {
-        day: {
-            type: Number
-        },
-        month: {
-            type: Number
-        },
-        year: {
-            type: Number
-        }
+        // How to manipulate date data
+        // const date = new Date('mm.dd.yyyy h:m:s')
+        // const timestamp = date.getTime()
+        type: String
     },
     likes: {
         type: Number,
