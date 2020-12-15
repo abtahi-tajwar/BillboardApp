@@ -3,14 +3,27 @@ body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif, Helvetica Neue;
 }
 .upper-bar {
     background-color: #180049;
-    display: flex;
-    justify-content: space-between;
+    height: 50px;
+    /*display: flex; 
+    justify-content: space-between; */
 }
-.logo {
-    margin: 5px 0px 8px 25px;
+.logo img{
+    margin: 5px 0px 0px 25px;
+}
+.hamburger {
+    position: relative;
+}
+.menuButton {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 80%;
+    transform: translate(-5%, -80%);
+    z-index: 2; 
 }
 .lower-bar {
     background-color: #210065;
@@ -77,7 +90,9 @@ body {
 }    
 .map {
     display: flex;
-    margin-left: 100px;
+    align-items: center;
+    justify-content: center;
+    
 }
 .map-logo {
     margin: 10px;
@@ -92,7 +107,8 @@ body {
 .offer1, .offer2, .offer3, .offer4 {
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    position: relative;
 }
 .offer1-text, .offer2-text, .offer3-text, .offer4-text {
     display: flex;
@@ -104,7 +120,7 @@ body {
     margin-left: 10px;
 }
 .offer1-text2, .offer2-text2, .offer3-text2, .offer4-text2 {
-    margin-left: 20px;
+    margin-left: 35px;
 }
 .view-btn a {
     text-decoration: none;
@@ -116,10 +132,15 @@ body {
     font-size: 12px;
 }
 .view-btn {
-    position: relative;
+    position: absolute;
     left: 250px;
-    top: -10px;
+    top: 205px;
 }
 .suggested-offers {
-    margin: 20px 0px 0px 32px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
