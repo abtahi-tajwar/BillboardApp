@@ -54,6 +54,7 @@ body {
 }
 .loaction-btn {
     display: flex;
+    padding-bottom: 10px;
     overflow-x: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -98,7 +99,7 @@ body {
     margin: 10px;
 }
 .map-text {
-    margin-top: 15px;
+    margin-top: 0px;
 }
 .map-text a {
     text-decoration: none;
@@ -107,7 +108,7 @@ body {
 .offer1, .offer2, .offer3, .offer4 {
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
     position: relative;
 }
 .offer1-text, .offer2-text, .offer3-text, .offer4-text {
@@ -118,9 +119,14 @@ body {
 }
 .offer1-text1, .offer2-text1, .offer3-text1, .offer4-text1 {
     margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 11px;
+    font-family: SegoeUI-Bold;
 }
 .offer1-text2, .offer2-text2, .offer3-text2, .offer4-text2 {
-    margin-left: 35px;
+    margin-left: 85px;
+    font-size: 11px;
+    font-family: SegoeUI-Semilight;
 }
 .view-btn a {
     text-decoration: none;
@@ -128,13 +134,14 @@ body {
     border: 1px solid #29007B;
     border-radius: 20px;
     background-color: #29007B;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 11px 26px;
+    font-size: 13px;
+    font-family: SegoeUL;
 }
 .view-btn {
     position: absolute;
-    left: 250px;
-    top: 205px;
+    left: 215px;
+    top: 215px;
 }
 .suggested-offers {
     margin-top: 20px;
