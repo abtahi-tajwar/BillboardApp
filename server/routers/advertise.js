@@ -1,9 +1,23 @@
 const express = require('express')
+const multer = require('multer')
+const sharp = require('sharp')
 
 const Advertise = require('../models/advertise')
 const auth = require('../middleware/userAuthorization')
+const user = require('../models/user')
 
 const advertiseRouter = new express.Router()
+const advertisePicture = multer({
+    limit: {
+        fileSize: 20000000 
+    }, 
+    fileFilter(req, file, callback) {
+        if(!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+            callback(new Error('Only upload jpg/jpeg/png file'))
+        }
+        callback(undefined, true)
+    }
+})
 
 advertiseRouter.post('/advertise/create', auth, async (req, res) => {
     if(req.user.type !== process.env.USER_TYPE_SELLER) {
@@ -53,5 +67,33 @@ advertiseRouter.patch('/advertise/:id', auth, async (req, res) => {
     } catch (e) {
         res.status(500).send()
     }
+})
+advertiseRouter.post('/advertise/picture/:id', auth, advertisePicture.single('advertisePicture'), async (req, res) => {
+    try {
+        const buffer = await sharp(req.file.buffer).resize({ height: 500, width: 1000}).jpeg().toBuffer()
+        const ad = await Advertise.findById(req.params.id)
+        if(!ad) {
+            return res.status(404).send('Advertise not found')
+        }
+        ad.coverImages.push(buffer)
+        await ad.save()
+    } catch (e) {
+        res.status(500).send()
+    }    
+})
+advertiseRouter.delete('/advertise/picture/:id/:serial', auth, async (req, res) => {
+    try {
+        const ad = await findOne({ _id: req.params.id, author: user.id })
+        if(!ad) {
+            res.status(404).send('Advertise not found')
+        }
+        ad.coverImages.splice(req.params.serial + 1, req.params.serial)
+        await ad.save()  
+
+    } catch (e) {
+        req.status(500).send()
+    }
+    
+    
 })
 module.exports = advertiseRouter

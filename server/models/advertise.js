@@ -12,7 +12,7 @@ const Advertise = new mongoose.Schema({
         type: String,
     },
     coverImages: [{
-        image: Buffer
+        type: Buffer
     }],
     baseInfo: {
         type: String,
