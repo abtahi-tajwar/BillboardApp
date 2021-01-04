@@ -92,4 +92,11 @@ const Advertise = new mongoose.Schema({
     timestamps: true
 })
 
+Advertise.methods.getInfo = function () {
+    return {
+        title: this.title,
+        description: this.description
+    }
+}
+
 module.exports = mongoose.model('Advertise', Advertise)
