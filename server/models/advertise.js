@@ -67,15 +67,28 @@ const Advertise = new mongoose.Schema({
         type: String
     },
     likes: {
-        type: Number,
-        default: 0
+        count: {
+            type: String,
+            default: 0
+        },
+        users: [{
+            name: {
+                type: String
+            },
+            id: {
+                type: mongoose.Schema.Types.ObjectId
+            }
+        }]
     },
     comments: [{
-        commentText: {
+        name: {
             type: String
         },
-        commentLikes: {
-            type: Number
+        id: {
+            type: mongoose.Schema.Types.ObjectId
+        },
+        commentText: {
+            type: String
         }
     }],
     author: {
@@ -87,6 +100,12 @@ const Advertise = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Review'
+    }],
+    categories: [{
+        type: String
+    }],
+    tags: [{
+        type: String
     }]
 }, {
     timestamps: true

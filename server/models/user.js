@@ -64,7 +64,36 @@ const User = new mongoose.Schema({
     type: {
         type: String
     },
-
+    history: {
+        tags: [{
+            name: {
+                type: String,
+                trim: true,
+                lowercase: true
+            },
+            id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+            visitCount: {
+                type: Number,
+                default: 0
+            }
+        }],
+        categories: [{
+            name: {
+                type: String,
+                trim: true,
+                lowercase: true
+            },
+            id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+            visitCount: {
+                type: Number,
+                default: 0
+            }
+        }]
+    },
     tokens: [{
         token: {
             type: String

@@ -180,4 +180,42 @@ advertiseRouter.get('/advertise', auth, async (req, res) => {
         res.status(500).send()
     }
 })
+advertiseRouter.patch('/advertise/like/:id', auth, async (req, res) => {
+
+        const ad = await Advertise.findById(req.params.id)
+        if(!ad) {
+            res.status(404).send('Invalid Ad ID')
+        }
+        ad.likes.count += 1
+        const data = {
+            name: req.user.name,
+            id: req.user._id
+        }
+        ad.likes.users.push(data)
+        await ad.save()
+        res.status(200).send()
+
+
+        res.status(500).send()
+
+})
+advertiseRouter.patch('/advertise/comment/:id', auth, async (req, res) => {
+    try {
+        const ad = await Advertise.findById(req.params.id)
+        if(!ad) {
+            res.status(404).send('Invalid Ad ID')
+        }
+        const data = {
+            name: req.user.name,
+            id: req.user._id,
+            commentText: req.body.commentText
+        }
+        ad.comments.push(data)
+        ad.save()
+        res.status(200).send()
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
 module.exports = advertiseRouter
